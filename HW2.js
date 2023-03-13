@@ -71,21 +71,21 @@ function createButton() {
   const button = document.createElement("button");
   button.textContent = "Click me";
   document.body.appendChild(button);
-  console.log("Render task 1");
+  console.log("Рендер задача 1");
 }
 
 function changeButtonColor() {
   const button = document.querySelector("button");
   button.style.backgroundColor = "red";
-  console.log("Render task 2");
+  console.log("Рендер задача 2");
 }
 
 function getQueue() {
   setTimeout(function () {
-    console.log("Task 1");
+    console.log("Задача 1");
 
     Promise.resolve().then(function () {
-      console.log("Microtask 1");
+      console.log("Микрозадача 1");
 
       requestAnimationFrame(function () {
         createButton();
@@ -97,24 +97,24 @@ function getQueue() {
 
   function task2() {
     setTimeout(function () {
-      console.log("Task 2");
+      console.log("Задача 2");
 
       Promise.resolve().then(function () {
-        console.log("Microtask 2");
+        console.log("Микрозадача 2");
       });
 
       Promise.resolve().then(function () {
-        console.log("Microtask 3");
+        console.log("Микрозадача 3");
       });
     });
   }
 
   function task3() {
     setTimeout(function () {
-      console.log("Task 3");
+      console.log("Задача 3");
 
       Promise.resolve().then(function () {
-        console.log("Microtask 4");
+        console.log("Микрозадача 4");
         requestAnimationFrame(function () {
           changeButtonColor();
         });
